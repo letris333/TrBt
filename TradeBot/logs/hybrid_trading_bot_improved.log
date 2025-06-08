@@ -1,0 +1,317 @@
+2025-05-29 00:04:49,758 - TradingBot - INFO - MainThread - Logging initialized at level INFO.
+2025-05-29 00:04:49,758 - TradingBot - INFO - MainThread - SystemStateManager initialized.
+2025-05-29 00:04:49,758 - TradingBot - INFO - MainThread - NotificationService initialized.
+2025-05-29 00:04:49,759 - TradingBot - CRITICAL - MainThread - Unhandled critical error in main execution: 'ConfigManager' object has no attribute 'has_section'
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 1380, in main
+    bot = TradingBot(config_mgr)
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 775, in __init__
+    self.indicators_manager = indicators.IndicatorsManager(self.config_manager)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 53, in __init__
+    self._initialize_indicators_internal()
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 68, in _initialize_indicators_internal
+    self._indicator_config = self.config.get_section('indicators') if self.config.has_section('indicators') else {}
+                                                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'ConfigManager' object has no attribute 'has_section'
+2025-05-29 00:04:49,761 - TradingBot - INFO - MainThread - Trading bot application attempting to finalize...
+2025-05-29 00:04:49,761 - TradingBot - INFO - MainThread - Trading bot application finished.
+2025-05-29 00:05:52,207 - TradingBot - INFO - MainThread - Logging initialized at level INFO.
+2025-05-29 00:05:52,208 - TradingBot - INFO - MainThread - SystemStateManager initialized.
+2025-05-29 00:05:52,208 - TradingBot - INFO - MainThread - NotificationService initialized.
+2025-05-29 00:05:52,208 - src.indicators - INFO - MainThread - Indicator configuration loaded: ['rsi_period', 'macd_fast', 'macd_slow', 'macd_signal', 'bollinger_period', 'bollinger_dev', 'volume_ma_period']
+2025-05-29 00:05:52,210 - src.indicators - INFO - MainThread - Ratings state chargé depuis pi_ratings_state.json.
+2025-05-29 00:05:52,211 - src.indicators - INFO - MainThread - Pi-Ratings state initialized. File: pi_ratings_state.json, Decay: 0.999, MaxHistory: 100, MaxRating: 10.0
+2025-05-29 00:05:52,211 - src.indicators - INFO - MainThread - TA-Lib initialisé (version: Inconnu)
+2025-05-29 00:05:52,211 - src.pipeline.feature_engineer - INFO - MainThread - Aucun fichier de scalers trouvé. Ils seront entraînés lors du premier cycle.
+2025-05-29 00:05:52,212 - src.pipeline.feature_engineer - INFO - MainThread - Feature scalers initialized. File: scalers.pkl
+2025-05-29 00:05:52,214 - src.pipeline.feature_engineer - INFO - MainThread - FeatureEngineer initialized.
+2025-05-29 00:05:52,216 - TradingBot - WARNING - MainThread - XGBoost model path 'None' not found or not configured.
+2025-05-29 00:05:52,216 - TradingBot - WARNING - MainThread - FutureQuant model path 'None' not found or not configured.
+2025-05-29 00:05:52,216 - TradingBot - WARNING - MainThread - Training parameters file not found: training_params.json. Using empty params.
+2025-05-29 00:05:52,216 - TradingBot - INFO - MainThread - ModelManager initialized.
+2025-05-29 00:05:52,218 - TradingBot - INFO - MainThread - HistoricalDataManager initialized with max_history=500, FQ_window=30
+2025-05-29 00:05:52,218 - src.analysis.market_structure_analyzer - INFO - MainThread - MarketStructureAnalyzer initialized.
+2025-05-29 00:05:52,219 - src.analysis.order_flow_analyzer - INFO - MainThread - Order Flow parameters initialized: {'absorption_volume_threshold': 100000.0, 'absorption_volume_ratio_min': 0.3, 'large_order_threshold': 10000, 'price_imbalance_window': 2.0}
+2025-05-29 00:05:52,219 - src.analysis.order_flow_analyzer - INFO - MainThread - OrderFlowAnalyzer initialized.
+2025-05-29 00:05:52,219 - src.analysis.sentiment_analyzer - INFO - MainThread - Initialisation du module d'analyse de sentiment interne...
+2025-05-29 00:05:54,822 - src.analysis.sentiment_analyzer - INFO - MainThread - Modèle de sentiment 'ProsusAI/finbert' chargé avec succès.
+2025-05-29 00:05:54,822 - src.analysis.sentiment_analyzer - WARNING - MainThread - Section [alpaca] non trouvée dans config.ini. La récupération des actualités Alpaca sera désactivée.
+2025-05-29 00:05:54,823 - src.analysis.sentiment_analyzer - INFO - MainThread - Sentiment state chargé depuis data/sentiment_state.json.
+2025-05-29 00:05:54,823 - src.analysis.sentiment_analyzer - INFO - MainThread - SentimentAnalyzer initialized.
+2025-05-29 00:05:54,823 - src.strategies.strategy_hybrid - INFO - MainThread - StrategyHybrid initialized.
+2025-05-29 00:05:54,825 - TradingBot - INFO - MainThread - DRMManager initialized.
+2025-05-29 00:05:54,825 - TradingBot - WARNING - MainThread - API key or secret is missing. Exchange functionality will be limited/simulated.
+2025-05-29 00:05:58,038 - TradingBot - INFO - MainThread - Exchange 'binance' initialized (DefaultType: not set).
+2025-05-29 00:05:58,038 - src.core.order_manager - INFO - MainThread - OrderManager initialized.
+2025-05-29 00:05:58,039 - src.core.position_manager - INFO - MainThread - Open positions state chargé depuis open_positions_state.json. Positions: 0
+2025-05-29 00:05:58,039 - src.core.position_manager - INFO - MainThread - Open positions state initialized. File: open_positions_state.json
+2025-05-29 00:05:58,039 - src.core.position_manager - INFO - MainThread - PositionManager initialized.
+2025-05-29 00:05:58,040 - TradingBot - INFO - MainThread - ExitStrategyManager initialized.
+2025-05-29 00:05:58,040 - TradingBot - INFO - MainThread - Starting initial historical data load...
+2025-05-29 00:05:58,040 - TradingBot - INFO - MainThread - Loading initial data for BTC/USD@ccxt...
+2025-05-29 00:05:58,040 - TradingBot - INFO - MainThread - Fetching OHLCV for BTC/USD (1h), limit=500...
+2025-05-29 00:05:58,549 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for BTC/USD.
+2025-05-29 00:05:58,570 - TradingBot - ERROR - MainThread - Error calculating market regime for BTC/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:15,863 - TradingBot - WARNING - MainThread - Sentiment score column not found for BTC/USD@ccxt. Initialized to NaN.
+2025-05-29 00:06:15,867 - TradingBot - INFO - MainThread - Initial data for BTC/USD@ccxt processed. 500 bars.
+2025-05-29 00:06:15,867 - TradingBot - INFO - MainThread - Loading initial data for ETH/USD@ccxt...
+2025-05-29 00:06:15,868 - TradingBot - INFO - MainThread - Fetching OHLCV for ETH/USD (1h), limit=500...
+2025-05-29 00:06:16,121 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for ETH/USD.
+2025-05-29 00:06:16,135 - TradingBot - ERROR - MainThread - Error calculating market regime for ETH/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:30,538 - TradingBot - WARNING - MainThread - Sentiment score column not found for ETH/USD@ccxt. Initialized to NaN.
+2025-05-29 00:06:30,541 - TradingBot - INFO - MainThread - Initial data for ETH/USD@ccxt processed. 500 bars.
+2025-05-29 00:06:30,542 - TradingBot - INFO - MainThread - Loading initial data for SOL/USD@ccxt...
+2025-05-29 00:06:30,542 - TradingBot - INFO - MainThread - Fetching OHLCV for SOL/USD (1h), limit=500...
+2025-05-29 00:06:30,792 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for SOL/USD.
+2025-05-29 00:06:30,801 - TradingBot - ERROR - MainThread - Error calculating market regime for SOL/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:43,927 - TradingBot - WARNING - MainThread - Sentiment score column not found for SOL/USD@ccxt. Initialized to NaN.
+2025-05-29 00:06:43,931 - TradingBot - INFO - MainThread - Initial data for SOL/USD@ccxt processed. 500 bars.
+2025-05-29 00:06:43,931 - src.analysis.sentiment_analyzer - INFO - MainThread - Sentiment state chargé depuis data/sentiment_state.json.
+2025-05-29 00:06:43,933 - TradingBot - INFO - MainThread - Initial data load complete.
+2025-05-29 00:06:43,933 - src.core.position_manager - INFO - MainThread - Synchronisation des positions avec l'exchange...
+2025-05-29 00:06:43,933 - src.core.position_manager - WARNING - MainThread - La synchronisation des positions réelles de l'exchange n'est pas entièrement implémentée pour tous les types de marchés/exchanges.
+2025-05-29 00:06:43,933 - TradingBot - INFO - MainThread - Performing system health check...
+2025-05-28 22:06:44.169136+00:00 - Health check log write test.
+2025-05-29 00:06:44,170 - TradingBot - INFO - MainThread - System Health Check PASS
+2025-05-29 00:06:44,170 - TradingBot - INFO - MainThread - Starting trading loop for ['BTC/USD@ccxt', 'ETH/USD@ccxt', 'SOL/USD@ccxt']. Update interval: 3600s.
+2025-05-29 00:06:44,405 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - --- Processing asset: BTC/USD@ccxt ---
+2025-05-29 00:06:44,405 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Fetching OHLCV for BTC/USD (1h), limit=16...
+2025-05-29 00:06:44,644 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for BTC/USD.
+2025-05-29 00:06:44,645 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Processing for BTC/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 107503.0
+2025-05-29 00:06:44,660 - TradingBot - ERROR - Thread-3 (_run_asset_processing_cycle) - Error calculating market regime for BTC/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:44,672 - src.core.order_manager - ERROR - Thread-3 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:44,874 - src.core.order_manager - ERROR - Thread-3 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:44,904 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - --- Processing asset: ETH/USD@ccxt ---
+2025-05-29 00:06:44,904 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Fetching OHLCV for ETH/USD (1h), limit=16...
+2025-05-29 00:06:45,165 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for ETH/USD.
+2025-05-29 00:06:45,191 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Processing for ETH/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 2651.6
+2025-05-29 00:06:45,259 - TradingBot - ERROR - Thread-4 (_run_asset_processing_cycle) - Error calculating market regime for ETH/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:45,271 - src.core.order_manager - ERROR - Thread-4 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:45,474 - src.core.order_manager - ERROR - Thread-4 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:45,483 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - --- Processing asset: SOL/USD@ccxt ---
+2025-05-29 00:06:45,484 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Fetching OHLCV for SOL/USD (1h), limit=16...
+2025-05-29 00:06:45,773 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for SOL/USD.
+2025-05-29 00:06:45,774 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Processing for SOL/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 171.49
+2025-05-29 00:06:45,789 - TradingBot - ERROR - Thread-5 (_run_asset_processing_cycle) - Error calculating market regime for SOL/USD@ccxt: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+Traceback (most recent call last):
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 805, in get
+    value = d[option]
+            ~^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 1006, in __getitem__
+    return self.__missing__(key)            # support subclasses that define __missing__
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\collections\__init__.py", line 998, in __missing__
+    raise KeyError(key)
+KeyError: 'bbw_expansion_fixed'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Natnael\Nouveau dossier\src\main_trader.py", line 384, in add_ohlcv_data
+    self.market_regime_history[symbol_market] = self.indicators_manager.classify_market_regime(
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Natnael\Nouveau dossier\src\indicators.py", line 993, in classify_market_regime
+    if config_manager.get('regime_thresholds', 'bbw_expansion_fixed') is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Natnael\AppData\Local\Programs\Python\Python311\Lib\configparser.py", line 808, in get
+    raise NoOptionError(option, section)
+configparser.NoOptionError: No option 'bbw_expansion_fixed' in section: 'regime_thresholds'
+2025-05-29 00:06:45,815 - src.core.order_manager - ERROR - Thread-5 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:46,016 - src.core.order_manager - ERROR - Thread-5 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:06:46,051 - TradingBot - INFO - MainThread - Cycle completed in 1.88s. Sleeping for 3598.12s.
+2025-05-29 00:16:48,506 - TradingBot - INFO - MainThread - Logging initialized at level INFO.
+2025-05-29 00:16:48,506 - TradingBot - INFO - MainThread - SystemStateManager initialized.
+2025-05-29 00:16:48,506 - TradingBot - INFO - MainThread - NotificationService initialized.
+2025-05-29 00:16:48,506 - src.indicators - INFO - MainThread - Indicator configuration loaded: ['rsi_period', 'macd_fast', 'macd_slow', 'macd_signal', 'bollinger_period', 'bollinger_dev', 'volume_ma_period']
+2025-05-29 00:16:48,508 - src.indicators - INFO - MainThread - Ratings state chargé depuis pi_ratings_state.json.
+2025-05-29 00:16:48,508 - src.indicators - INFO - MainThread - Pi-Ratings state initialized. File: pi_ratings_state.json, Decay: 0.999, MaxHistory: 100, MaxRating: 10.0
+2025-05-29 00:16:48,508 - src.indicators - INFO - MainThread - TA-Lib initialisé (version: Inconnu)
+2025-05-29 00:16:48,508 - src.pipeline.feature_engineer - INFO - MainThread - Aucun fichier de scalers trouvé. Ils seront entraînés lors du premier cycle.
+2025-05-29 00:16:48,509 - src.pipeline.feature_engineer - INFO - MainThread - Feature scalers initialized. File: scalers.pkl
+2025-05-29 00:16:48,509 - src.pipeline.feature_engineer - INFO - MainThread - FeatureEngineer initialized.
+2025-05-29 00:16:48,509 - TradingBot - WARNING - MainThread - XGBoost model path 'None' not found or not configured.
+2025-05-29 00:16:48,510 - TradingBot - WARNING - MainThread - FutureQuant model path 'None' not found or not configured.
+2025-05-29 00:16:48,510 - TradingBot - WARNING - MainThread - Training parameters file not found: training_params.json. Using empty params.
+2025-05-29 00:16:48,510 - TradingBot - INFO - MainThread - ModelManager initialized.
+2025-05-29 00:16:48,510 - TradingBot - INFO - MainThread - HistoricalDataManager initialized with max_history=500, FQ_window=30
+2025-05-29 00:16:48,510 - src.analysis.market_structure_analyzer - INFO - MainThread - MarketStructureAnalyzer initialized.
+2025-05-29 00:16:48,511 - src.analysis.order_flow_analyzer - INFO - MainThread - Order Flow parameters initialized: {'absorption_volume_threshold': 100000.0, 'absorption_volume_ratio_min': 0.3, 'large_order_threshold': 10000, 'price_imbalance_window': 2.0}
+2025-05-29 00:16:48,511 - src.analysis.order_flow_analyzer - INFO - MainThread - OrderFlowAnalyzer initialized.
+2025-05-29 00:16:48,511 - src.analysis.sentiment_analyzer - INFO - MainThread - Initialisation du module d'analyse de sentiment interne...
+2025-05-29 00:16:49,988 - src.analysis.sentiment_analyzer - INFO - MainThread - Modèle de sentiment 'ProsusAI/finbert' chargé avec succès.
+2025-05-29 00:16:49,988 - src.analysis.sentiment_analyzer - WARNING - MainThread - Clés API Alpaca non trouvées dans la configuration. La récupération des actualités Alpaca sera désactivée.
+2025-05-29 00:16:49,989 - src.analysis.sentiment_analyzer - INFO - MainThread - Sentiment state chargé depuis data/sentiment_state.json.
+2025-05-29 00:16:49,989 - src.analysis.sentiment_analyzer - INFO - MainThread - SentimentAnalyzer initialized.
+2025-05-29 00:16:49,990 - src.strategies.strategy_hybrid - INFO - MainThread - StrategyHybrid initialized.
+2025-05-29 00:16:49,990 - TradingBot - INFO - MainThread - DRMManager initialized.
+2025-05-29 00:16:49,991 - TradingBot - WARNING - MainThread - API key or secret is missing. Exchange functionality will be limited/simulated.
+2025-05-29 00:16:52,887 - TradingBot - INFO - MainThread - Exchange 'binance' initialized (DefaultType: not set).
+2025-05-29 00:16:52,887 - src.core.order_manager - INFO - MainThread - OrderManager initialized.
+2025-05-29 00:16:52,888 - src.core.position_manager - INFO - MainThread - Open positions state chargé depuis open_positions_state.json. Positions: 0
+2025-05-29 00:16:52,889 - src.core.position_manager - INFO - MainThread - Open positions state initialized. File: open_positions_state.json
+2025-05-29 00:16:52,889 - src.core.position_manager - INFO - MainThread - PositionManager initialized.
+2025-05-29 00:16:52,889 - TradingBot - INFO - MainThread - ExitStrategyManager initialized.
+2025-05-29 00:16:52,890 - TradingBot - INFO - MainThread - Starting initial historical data load...
+2025-05-29 00:16:52,890 - TradingBot - INFO - MainThread - Loading initial data for BTC/USD@ccxt...
+2025-05-29 00:16:52,890 - TradingBot - INFO - MainThread - Fetching OHLCV for BTC/USD (1h), limit=500...
+2025-05-29 00:16:53,394 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for BTC/USD.
+2025-05-29 00:17:05,652 - TradingBot - WARNING - MainThread - Sentiment score column not found for BTC/USD@ccxt. Initialized to NaN.
+2025-05-29 00:17:05,653 - TradingBot - INFO - MainThread - Initial data for BTC/USD@ccxt processed. 500 bars.
+2025-05-29 00:17:05,655 - TradingBot - INFO - MainThread - Loading initial data for ETH/USD@ccxt...
+2025-05-29 00:17:05,655 - TradingBot - INFO - MainThread - Fetching OHLCV for ETH/USD (1h), limit=500...
+2025-05-29 00:17:05,916 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for ETH/USD.
+2025-05-29 00:17:18,969 - TradingBot - WARNING - MainThread - Sentiment score column not found for ETH/USD@ccxt. Initialized to NaN.
+2025-05-29 00:17:18,972 - TradingBot - INFO - MainThread - Initial data for ETH/USD@ccxt processed. 500 bars.
+2025-05-29 00:17:18,972 - TradingBot - INFO - MainThread - Loading initial data for SOL/USD@ccxt...
+2025-05-29 00:17:18,972 - TradingBot - INFO - MainThread - Fetching OHLCV for SOL/USD (1h), limit=500...
+2025-05-29 00:17:19,230 - TradingBot - INFO - MainThread - Fetched 500 OHLCV bars for SOL/USD.
+2025-05-29 00:17:31,962 - TradingBot - WARNING - MainThread - Sentiment score column not found for SOL/USD@ccxt. Initialized to NaN.
+2025-05-29 00:17:31,965 - TradingBot - INFO - MainThread - Initial data for SOL/USD@ccxt processed. 500 bars.
+2025-05-29 00:17:31,965 - src.analysis.sentiment_analyzer - INFO - MainThread - Sentiment state chargé depuis data/sentiment_state.json.
+2025-05-29 00:17:31,966 - TradingBot - INFO - MainThread - Initial data load complete.
+2025-05-29 00:17:31,966 - src.core.position_manager - INFO - MainThread - Synchronisation des positions avec l'exchange...
+2025-05-29 00:17:31,967 - src.core.position_manager - WARNING - MainThread - La synchronisation des positions réelles de l'exchange n'est pas entièrement implémentée pour tous les types de marchés/exchanges.
+2025-05-29 00:17:31,967 - TradingBot - INFO - MainThread - Performing system health check...
+2025-05-28 22:17:32.204738+00:00 - Health check log write test.
+2025-05-29 00:17:32,205 - TradingBot - INFO - MainThread - System Health Check PASS
+2025-05-29 00:17:32,205 - TradingBot - INFO - MainThread - Starting trading loop for ['BTC/USD@ccxt', 'ETH/USD@ccxt', 'SOL/USD@ccxt']. Update interval: 3600s.
+2025-05-29 00:17:32,440 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - --- Processing asset: BTC/USD@ccxt ---
+2025-05-29 00:17:32,440 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Fetching OHLCV for BTC/USD (1h), limit=16...
+2025-05-29 00:17:32,686 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for BTC/USD.
+2025-05-29 00:17:32,688 - TradingBot - INFO - Thread-3 (_run_asset_processing_cycle) - Processing for BTC/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 107503.0
+2025-05-29 00:17:32,730 - src.core.order_manager - ERROR - Thread-3 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:32,932 - src.core.order_manager - ERROR - Thread-3 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:32,939 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - --- Processing asset: ETH/USD@ccxt ---
+2025-05-29 00:17:32,940 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Fetching OHLCV for ETH/USD (1h), limit=16...
+2025-05-29 00:17:33,229 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for ETH/USD.
+2025-05-29 00:17:33,230 - TradingBot - INFO - Thread-4 (_run_asset_processing_cycle) - Processing for ETH/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 2651.6
+2025-05-29 00:17:33,265 - src.core.order_manager - ERROR - Thread-4 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:33,466 - src.core.order_manager - ERROR - Thread-4 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:33,482 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - --- Processing asset: SOL/USD@ccxt ---
+2025-05-29 00:17:33,484 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Fetching OHLCV for SOL/USD (1h), limit=16...
+2025-05-29 00:17:33,764 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Fetched 16 OHLCV bars for SOL/USD.
+2025-05-29 00:17:33,765 - TradingBot - INFO - Thread-5 (_run_asset_processing_cycle) - Processing for SOL/USD@ccxt based on bar at 2025-05-28 21:00:00+00:00, Close: 171.49
+2025-05-29 00:17:33,874 - src.core.order_manager - ERROR - Thread-5 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:34,075 - src.core.order_manager - ERROR - Thread-5 (_run_asset_processing_cycle) - Erreur API lors de la récupération du solde (ccxt): binance requires "apiKey" credential
+2025-05-29 00:17:34,110 - TradingBot - INFO - MainThread - Cycle completed in 1.90s. Sleeping for 3598.10s.
+2025-05-29 00:19:52,528 - TradingBot - INFO - MainThread - Trading bot interrupted by user (Ctrl+C). Shutting down gracefully...
+2025-05-29 00:19:52,529 - TradingBot - CRITICAL - MainThread - EMERGENCY SHUTDOWN TRIGGERED!
+2025-05-29 00:19:52,531 - TradingBot - INFO - MainThread - Trading bot application attempting to finalize...
+2025-05-29 00:19:52,553 - TradingBot - INFO - MainThread - Trading bot application finished.
