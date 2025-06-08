@@ -110,22 +110,39 @@ Logique évoluée : SI pattern_X ET regime_Y ALORS engager_stratégie_X_adaptée
 
 Structure des Fichiers
 ├── main_trader.py           # Point d'entrée principal avec gestion d'erreurs robuste
+
 ├── config.ini               # Configuration (à créer à partir du template)
+
 ├── config.ini.template      # Modèle de configuration détaillé et commenté
+
 ├── indicators.py            # Module unifié d'indicateurs (Pi-Ratings + TA)
+
 ├── feature_engineer.py      # Préparation des features pour les modèles
+
 ├── strategy_hybrid.py       # Logique de décision combinant tous les signaux
+
 ├── training_pipeline.py     # Préparation des données et entraînement des modèles
+
 ├── model_xgboost.py         # Modèle XGBoost pour classification
+
 ├── model_futurequant.py     # Modèle Transformer pour prédiction de quantiles
+
 ├── market_structure_analyzer.py # Analyse de la structure de marché
+
 ├── order_flow_analyzer.py   # Analyse des flux d'ordres
+
 ├── parameter_optimizer.py   # Optimisation des paramètres de trading
+
 ├── position_manager.py      # Gestion des positions ouvertes et du risque
+
 ├── order_manager.py         # Exécution des ordres et stratégies de sortie
+
 ├── tests/                   # Suite de tests unitaires et d'intégration
+
 ├── README.md                # Documentation du projet
+
 └── requirements.txt         # Dépendances Python
+
 IGNORE_WHEN_COPYING_START
 content_copy
 download
