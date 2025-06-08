@@ -143,139 +143,101 @@ Structure des Fichiers
 
 └── requirements.txt         # Dépendances Python
 
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-IGNORE_WHEN_COPYING_END
-Configuration
-
-Le fichier config.ini centralise tous les paramètres du système. Pour commencer, copiez config.ini.template vers config.ini et remplissez vos informations.
+Le fichier `config.ini` centralise tous les paramètres du système. Pour commencer, copiez `config.ini.template` vers `config.ini` et remplissez vos informations.
 
 Le fichier de configuration est organisé en sections :
 
-[api]: Clés API pour les exchanges et fournisseurs de données.
+- `[api]` : Clés API pour les exchanges et fournisseurs de données.
+- `[trading]` : Paramètres généraux (paires, taille de position par défaut).
+- `[backtest]` : Paramètres spécifiques au backtesting, dont la colonne pour le score de sentiment (`sentiment_col`).
+- `[drm]` : Seuils pour la Gestion Dynamique du Risque (setups A/B/C).
+- `[exit_strategies]` : Paramètres pour le Move-to-Breakeven et le Trailing Stop.
+- `[trinary_config]` : Paramètres du Système Trinary, notre filtre de régime de marché propriétaire utilisé pour évaluer la volatilité et le momentum.
 
-[trading]: Paramètres généraux (paires, taille de position par défaut).
+## Installation et Démarrage
 
-[backtest]: Paramètres spécifiques au backtesting, dont la colonne pour le score de sentiment (sentiment_col).
+### Prérequis
 
-[drm]: Seuils pour la Gestion Dynamique du Risque (setups A/B/C).
+- Python 3.11.5+
+- Git
 
-[exit_strategies]: Paramètres pour le Move-to-Breakeven et le Trailing Stop.
+### Étapes d'installation
 
-[trinary_config]: Paramètres du Système Trinary, notre filtre de régime de marché propriétaire utilisé pour évaluer la volatilité et le momentum.
+1. Clonez le dépôt :
 
-Installation et Démarrage
-Prérequis
+   ```bash
+   git clone <URL_DU_DEPOT>
+   cd <NOM_DU_DEPOT>
+   ```
 
-Python 3.11.5+
+2. Créez et activez un environnement virtuel (recommandé) :
 
-Git
+   Pour Linux/macOS :
 
-Étapes d'installation
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-Clonez le dépôt :
+   Pour Windows :
 
-git clone <URL_DU_DEPOT>
-cd <NOM_DU_DEPOT>
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   ```
 
-Créez et activez un environnement virtuel (recommandé) :
+3. Installez les dépendances :
 
-# Pour Linux/macOS
-python3 -m venv venv
-source venv/bin/activate
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-# Pour Windows
-python -m venv venv
-.\venv\Scripts\activate
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+4. Configurez le système :
 
-Installez les dépendances :
+   Copiez `config.ini.template` et renommez-le en `config.ini`.
 
-pip install -r requirements.txt
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+   Éditez `config.ini` pour y ajouter vos clés API et ajuster les paramètres selon vos besoins.
 
-Configurez le système :
-
-Copiez config.ini.template et renommez-le en config.ini.
-
-Éditez config.ini pour y ajouter vos clés API et ajuster les paramètres selon vos besoins.
-
-Utilisation
+## Utilisation
 
 Le projet peut être lancé de plusieurs manières selon l'objectif.
 
-1. Lancer le trading en temps réel :
+- Lancer le trading en temps réel :
 
-python main_trader.py
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+  ```bash
+  python main_trader.py
+  ```
 
-2. Lancer un backtest sur une période donnée :
-(Exemple hypothétique à adapter à votre code)
+- Lancer un backtest sur une période donnée (exemple hypothétique à adapter à votre code) :
 
-python main_trader.py --backtest --start-date "2023-01-01" --end-date "2023-06-30"
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
+  ```bash
+  python main_trader.py --backtest --start-date "2023-01-01" --end-date "2023-06-30"
+  ```
 
-3. Lancer une optimisation de paramètres :
-(Exemple hypothétique à adapter à votre code)
+- Lancer une optimisation de paramètres (exemple hypothétique à adapter à votre code) :
 
-python parameter_optimizer.py --strategy hybrid --symbol BTCUSDT --method bayesian
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-Suite de Tests
+  ```bash
+  python parameter_optimizer.py --strategy hybrid --symbol BTCUSDT --method bayesian
+  ```
 
-Le projet utilise pytest pour les tests unitaires et d'intégration. Pour lancer la suite de tests :
+## Suite de Tests
 
+Le projet utilise `pytest` pour les tests unitaires et d'intégration. Pour lancer la suite de tests :
+
+```bash
 pytest
-IGNORE_WHEN_COPYING_START
-content_copy
-download
-Use code with caution.
-Bash
-IGNORE_WHEN_COPYING_END
-Limitations et Considérations
+```
 
-Données Order Flow: L'analyse OF complète nécessite des données tick/L2 qui peuvent ne pas être disponibles via les APIs standard ou être coûteuses.
+## Limitations et Considérations
 
-Backtesting: La validation des stratégies basées sur la microstructure (MS/OF) est complexe et nécessite des données historiques de haute résolution.
+- Données Order Flow : L'analyse OF complète nécessite des données tick/L2 qui peuvent ne pas être disponibles via les APIs standard ou être coûteuses.
+- Backtesting : La validation des stratégies basées sur la microstructure (MS/OF) est complexe et nécessite des données historiques de haute résolution.
+- Sur-optimisation (Overfitting) : L'optimisation des paramètres doit être menée avec rigueur (données de validation/test distinctes) pour éviter le sur-ajustement aux données historiques.
 
-Sur-optimisation (Overfitting): L'optimisation des paramètres doit être menée avec rigueur (données de validation/test distinctes) pour éviter le sur-ajustement aux données historiques.
+## Licence
 
-Licence
+Ce projet est distribué sous la licence [NOM_DE_LA_LICENCE]. Voir le fichier `LICENSE` pour plus de détails. (Note : Pensez à ajouter un fichier `LICENSE`, par exemple MIT si le projet est open source).
 
-Ce projet est distribué sous la licence [NOM_DE_LA_LICENCE]. Voir le fichier LICENSE pour plus de détails. (Note: Pensez à ajouter un fichier LICENSE, par exemple MIT si le projet est open source).
-
-AVERTISSEMENT
+## Avertissement
 
 Ce système est fourni à des fins éducatives et de recherche uniquement. Le trading sur les marchés financiers comporte des risques de perte significatifs. Aucune garantie de performance, explicite ou implicite, n'est offerte. Utilisez ce code à vos propres risques.
